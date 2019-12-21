@@ -3,13 +3,11 @@ import fetch from 'node-fetch';
 type Period = 'DAY' | 'QUARTER_OF_AN_HOUR' | 'MONTH' | 'HOUR' | 'WEEK' | 'MONTH' | 'YEAR';
 
 export default class SolarEdge {
-  public HOST = 'https://monitoringapi.solaredge.com';
+  public HOST: string = 'https://monitoringapi.solaredge.com';
 
-  constructor(private API_KEY: string) {
-    this.API_KEY = API_KEY;
-  }
+  constructor(private API_KEY: string) {}
 
-  public fetchSolarEdge = async (url: string, options?) => {
+  public fetchSolarEdge = async (url: string, options?: {}) => {
     if (!url.toLowerCase().startsWith('http')) {
       url = this.HOST + url;
     }
