@@ -1,7 +1,7 @@
 {
-  "name": "package-starter",
-  "version": "0.0.0",
-  "description": "Starter",
+  "name": "node-solaredge",
+  "version": "0.0.1",
+  "description": "SolarEdge SDK (solar panels)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
@@ -17,8 +17,7 @@
     "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "npm run build && npm test && npm run lint",
     "preversion": "npm run lint"
   },
   "devDependencies": {
@@ -38,5 +37,8 @@
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
   }
 }
