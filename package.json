@@ -1,5 +1,5 @@
 {
-  "name": "node-solaredge",
+  "name": "solaredge",
   "version": "0.0.1",
   "description": "SolarEdge SDK (solar panels)",
   "main": "lib/index.js",

@@ -7,8 +7,8 @@ export default class SolarEdge {
 
     constructor(private API_KEY: string) {}
 
-    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-    public fetchSolarEdge = async (url: string, options?: {}): any => {
+    // eslint-disable-next-line
+    public fetchSolarEdge = async (url: string, options?: {}) => {
         if (!url.toLowerCase().startsWith('http')) {
             url = this.HOST + url;
         }
