@@ -9,7 +9,9 @@ Install using `npm install --save solaredge`
 
 ## How to use?
 Import: `import SolarEdge from 'solaredge';`
+
 Initialize: `const solaredge = new SolarEdge('<api key here>');`
+
 
 Then, you can use the methods from this class
 ```
