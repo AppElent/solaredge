@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';
+import axios, { AxiosRequestConfig } from 'axios';
 
-type Period = 'DAY' | 'QUARTER_OF_AN_HOUR' | 'MONTH' | 'HOUR' | 'WEEK' | 'MONTH' | 'YEAR';
+export type Period = 'DAY' | 'QUARTER_OF_AN_HOUR' | 'MONTH' | 'HOUR' | 'WEEK' | 'MONTH' | 'YEAR';
 
 export default class SolarEdge {
     public HOST = 'https://monitoringapi.solaredge.com';
@@ -8,18 +8,17 @@ export default class SolarEdge {
     constructor(private API_KEY: string) {}
 
     // eslint-disable-next-line
-    public fetchSolarEdge = async (url: string, options?: {}) => {
+    public fetchSolarEdge = async (url: string, options?: AxiosRequestConfig) => {
         if (!url.toLowerCase().startsWith('http')) {
             url = this.HOST + url;
         }
-        const response = await fetch(url, options);
+        const response = await axios.get(url, options);
         if (response.status !== 200) {
             throw new Error(
                 'Error fetching SolarEdge data from URL ' + url + ': ' + response.status + ' - ' + response.statusText,
             );
         }
-        const data = await response.json();
-        return data;
+        return response.data;
     };
 
     // eslint-disable-next-line
