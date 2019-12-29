@@ -43,4 +43,4 @@ export default class SolarEdge {
     // eslint-disable-next-line
     public getEquipmentData = async (site: number) =>
         this.fetchSolarEdge(this.HOST + '/equipment/' + site + '/list?size=1&api_key=' + this.API_KEY);
-}
+} 
